@@ -77,7 +77,7 @@ class AdMobDisplayBannerViewController: BannerBaseViewController, GADBannerViewD
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-        PrebidDemoLogger.shared.error("AdMob did fail to receive ad with error: \(error)")
+//        PrebidDemoLogger.shared.error("AdMob did fail to receive ad with error: \(error)")
         prebidAdMobMediaitonAdUnit?.adObjectDidFailToLoadAd(adObject: gadBanner, with: error)
     }
 }

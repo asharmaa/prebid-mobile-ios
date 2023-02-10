@@ -55,11 +55,11 @@ public class SkadnParametersManager: NSObject {
             }
             
             // For SKAdNetwork 4.0 add sourceidentifier that replaces campaign
-            if #available(iOS 16.0, *) {
-                if let sourceidentifier = skadnInfo.sourceidentifier, let sourceidentifierInteger = Int(sourceidentifier) {
-                    imp.sourceIdentifier = NSNumber(value: sourceidentifierInteger)
-                }
-            }
+//            if #available(iOS 16.0, *) {
+//                if let sourceidentifier = skadnInfo.sourceidentifier, let sourceidentifierInteger = Int(sourceidentifier) {
+//                    imp.sourceIdentifier = NSNumber(value: sourceidentifierInteger)
+//                }
+//            }
             
             return imp
         }
@@ -86,11 +86,11 @@ public class SkadnParametersManager: NSObject {
                     productParams[SKStoreProductParameterAdNetworkCampaignIdentifier] = campaign
                 }
                 
-                if #available(iOS 16.0, *) {
-                    if let sourceIdentifier = skadnInfo.sourceidentifier, let sourceidentifierInteger = Int(sourceIdentifier) {
-                        productParams[SKStoreProductParameterAdNetworkSourceIdentifier] = NSNumber(value: sourceidentifierInteger)
-                    }
-                }
+//                if #available(iOS 16.0, *) {
+//                    if let sourceIdentifier = skadnInfo.sourceidentifier, let sourceidentifierInteger = Int(sourceIdentifier) {
+//                        productParams[SKStoreProductParameterAdNetworkSourceIdentifier] = NSNumber(value: sourceidentifierInteger)
+//                    }
+//                }
                 
                 productParams[SKStoreProductParameterITunesItemIdentifier] = itunesitem
                 productParams[SKStoreProductParameterAdNetworkIdentifier] = network

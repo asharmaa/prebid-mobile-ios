@@ -49,7 +49,7 @@ class PrebidServerStatusRequester {
             return
         }
         
-        ServerConnection.shared.get(serverEndpoint) { serverResponse in
+        ServerConnection.shared.get(serverEndpoint, timeout: 15000) { serverResponse in
             guard serverResponse.isOKStatusCode else {
                 completion(.serverStatusWarning, serverResponse.error ?? PBMError.error(description: "Error occured during Prebid Server status check."))
                 return

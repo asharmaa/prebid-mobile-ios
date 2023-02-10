@@ -54,6 +54,6 @@ class InAppDisplayBannerViewController: BannerBaseViewController, BannerViewDele
     }
     
     func bannerView(_ bannerView: BannerView, didFailToReceiveAdWith error: Error) {
-        PrebidDemoLogger.shared.error("Banner view did fail to receive ad with error: \(error)")
+//        PrebidDemoLogger.shared.error("Banner view did fail to receive ad with error: \(error)")
     }
 }

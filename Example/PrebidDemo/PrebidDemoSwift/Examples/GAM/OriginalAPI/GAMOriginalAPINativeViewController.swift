@@ -98,7 +98,7 @@ class GAMOriginalAPINativeViewController:
     // MARK: GADAdLoaderDelegate
     
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
-        PrebidDemoLogger.shared.error("GAM did fail to receive ad with error: \(error)")
+//        PrebidDemoLogger.shared.error("GAM did fail to receive ad with error: \(error)")
     }
     
     // MARK: - NativeAdDelegate

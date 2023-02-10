@@ -98,7 +98,7 @@ struct IntegrationCaseManager {
         ),
         
         IntegrationCase(
-            title: "In-App Display Banner 320x50",
+            title: "In-App Display Banner 300x250",
             integrationKind: .inApp,
             adFormat: .displayBanner,
             configurationClosure: {

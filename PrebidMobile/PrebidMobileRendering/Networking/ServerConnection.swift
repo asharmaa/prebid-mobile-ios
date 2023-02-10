@@ -85,7 +85,7 @@ public class ServerConnection: NSObject, ServerConnectionProtocol, URLSessionDel
         getFor(resourceURL, timeout: timeout, headersOnly: true, callback: callback)
     }
     
-    public func get(_ resourceURL: String?, timeout: TimeInterval = 0, callback: @escaping (ServerResponse) -> Void) {
+    public func get(_ resourceURL: String?, timeout: TimeInterval, callback: @escaping (ServerResponse) -> Void) {
         getFor(resourceURL, timeout: timeout, headersOnly: false, callback: callback)
     }
     
@@ -107,7 +107,7 @@ public class ServerConnection: NSObject, ServerConnectionProtocol, URLSessionDel
         
         let session = createSession(timeout)
         let task = session.uploadTask(with: request, from: data) { [weak self] data, response, error in
-            self?.proccessResponse(request, urlResponse: response, responseData: data, error: error, fullServerCallback: callback)
+            self?.proccessResponse(request, urlResponse: response, responseData1: data, error: error, fullServerCallback: callback)
         }
         
         task.resume()
@@ -123,7 +123,7 @@ public class ServerConnection: NSObject, ServerConnectionProtocol, URLSessionDel
         let session = createSession(PBMTimeInterval.FIRE_AND_FORGET_TIMEOUT)
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             self?.proccessResponse(request, urlResponse: response,
-                                   responseData: data, error: error, fullServerCallback: callback)
+                                   responseData1: data, error: error, fullServerCallback: callback)
         }
         
         task.resume()
@@ -144,15 +144,28 @@ public class ServerConnection: NSObject, ServerConnectionProtocol, URLSessionDel
         let session = createSession(timeout)
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             self?.proccessResponse(request, urlResponse: response,
-                                   responseData: data, error: error, fullServerCallback: callback)
+                                   responseData1: data, error: error, fullServerCallback: callback)
         }
         
         task.resume()
     }
     
     private func proccessResponse(_ request: URLRequest, urlResponse: URLResponse?,
-                                  responseData: Data?, error: Error?,
-                                  fullServerCallback: ServerResponseCallback) {
+                                  responseData1: Data?, error: Error?,
+                                  fullServerCallback: ServerResponseCallback)  {
+        
+        let url = Bundle.main.url(forResource: "adresponse", withExtension: "json")
+        let responseData1 = try? Data(contentsOf: url!)
+        
+        do{
+            let json = try JSONSerialization.jsonObject(with: responseData1!, options: [])
+            if let jsonDictionary = json as? [String: Any] {
+                // Use the jsonDictionary as needed
+                print("jsonDictionary====> \(jsonDictionary)")
+            }
+        } catch {
+//            print("\(error)")
+        }
         
         let serverResponse = ServerResponse()
         
@@ -186,19 +199,19 @@ public class ServerConnection: NSObject, ServerConnectionProtocol, URLSessionDel
         
         // Body should be ignored if HEAD method was used
         if request.httpMethod != HTTPMethodHEAD {
-            guard let responseData = responseData else {
+            guard let responseData1 = responseData1 else {
                 serverResponse.error = PBMError.error(message: "No data from server", type: PBMErrorType.serverError)
                 fullServerCallback(serverResponse)
                 return
             }
             
-            serverResponse.rawData = responseData
+            serverResponse.rawData = responseData1
             
             // Attempt to parse if response is JSON
             if let contentType = responseHeaders[ServerConnection.contentTypeKey],
                contentType.contains(ServerConnection.contentTypeVal) {
                 do {
-                    let json = try PBMFunctions.dictionaryFromData(responseData)
+                    let json = try PBMFunctions.dictionaryFromData(responseData1)
                     serverResponse.jsonDict = json
                 } catch let parsingError {
                     let error = PBMError.error(message: "JSON Parsing Error: \(parsingError.localizedDescription)",

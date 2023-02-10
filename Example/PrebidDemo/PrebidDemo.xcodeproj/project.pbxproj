@@ -139,6 +139,7 @@
 		53F35F512926D702001C1183 /* MAXNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53F35F502926D702001C1183 /* MAXNativeAdView.xib */; };
 		53F35F57292792D6001C1183 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F35F56292792D6001C1183 /* SettingsViewController.m */; };
 		53F36047292EACF0001C1183 /* PrebidMobileAdMobAdapters.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53F36043292EACF0001C1183 /* PrebidMobileAdMobAdapters.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88DABBE52996B5170029602B /* adresponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 88DABBE42996B5170029602B /* adresponse.json */; };
 		9205E49127B561A9003DCCCC /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E49027B561A9003DCCCC /* TestExtensions.swift */; };
 		9205E49427B5622B003DCCCC /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205E49327B5622B003DCCCC /* XCTestCase+Extensions.swift */; };
 		C324CF5A29350A1F008DAA20 /* BannerVideoAdsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324CF5929350A1F008DAA20 /* BannerVideoAdsTest.swift */; };
@@ -396,6 +397,7 @@
 		640E75E2C6EB2A7268230D2A /* Pods-PrebidDemoObjectiveC_Old.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrebidDemoObjectiveC_Old.release.xcconfig"; path = "Target Support Files/Pods-PrebidDemoObjectiveC_Old/Pods-PrebidDemoObjectiveC_Old.release.xcconfig"; sourceTree = "<group>"; };
 		71D584CFFA6132CB2B6B74A6 /* Pods-PrebidDemoObjectiveC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrebidDemoObjectiveC.debug.xcconfig"; path = "Target Support Files/Pods-PrebidDemoObjectiveC/Pods-PrebidDemoObjectiveC.debug.xcconfig"; sourceTree = "<group>"; };
 		725E7FE27DFBC5E532A78D55 /* Pods-PrebidDemoObjectiveC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrebidDemoObjectiveC.release.xcconfig"; path = "Target Support Files/Pods-PrebidDemoObjectiveC/Pods-PrebidDemoObjectiveC.release.xcconfig"; sourceTree = "<group>"; };
+		88DABBE42996B5170029602B /* adresponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = adresponse.json; sourceTree = "<group>"; };
 		9205E49027B561A9003DCCCC /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
 		9205E49327B5622B003DCCCC /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		924F663127FECDD100C8DAF7 /* PrebidMobileMAXAdapters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PrebidMobileMAXAdapters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1039,6 +1041,7 @@
 		FA12E452231E9C5900CAA05B = {
 			isa = PBXGroup;
 			children = (
+				88DABBE42996B5170029602B /* adresponse.json */,
 				FA12E4E7231EB52D00CAA05B /* PrebidDemoTests */,
 				530D4AA4291A4BC600A2C796 /* PrebidDemoSwift */,
 				53BA02B1292531D000BE6015 /* PrebidDemoObjectiveC */,
@@ -1213,6 +1216,7 @@
 				530923EA29237E1F005C8B3C /* MAXNativeAdView.xib in Resources */,
 				53B03DA2291BC8C4000117E1 /* BannerBaseViewController.xib in Resources */,
 				530D4AAF291A4BC700A2C796 /* Assets.xcassets in Resources */,
+				88DABBE52996B5170029602B /* adresponse.json in Resources */,
 				530D4AAD291A4BC600A2C796 /* Main.storyboard in Resources */,
 				53072B622921585900228462 /* NativeBaseViewController.xib in Resources */,
 				53072B5A2921023E00228462 /* InterstitialBaseViewController.xib in Resources */,
